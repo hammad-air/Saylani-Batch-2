@@ -16,21 +16,17 @@ app.post("/webhook", async (req, res) => {
 
     function hi(agent) {
         console.log(`intent  =>  hi`);
-        agent.add('Welcome to ABC solutions. Do you want to make reservation?')
+        agent.add("")
     }
 
-    function sendEmail(agent) {
+    function sendNotes(agent) {
         const { number , date , email} = agent.parameters;
-       console.log(email)
-       console.log(number)
-       console.log(person)
-
-       agent.add(``)
+       agent.add("")
     }
 
     let intentMap = new Map();
     intentMap.set('hi', hi); 
-    intentMap.set('sendEmail', sendEmail);
+    intentMap.set('sendNotes', sendNotes);
     agent.handleRequest(intentMap);
 })
 app.listen(PORT, () => {
